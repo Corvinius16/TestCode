@@ -29,6 +29,7 @@ public class MainManager : MonoBehaviour {
     private  bool isPlay = false;
 
  
+    public static MainManager Instance;
 
     public ReferenceObject GetObject(MyGuid guid)
     {
@@ -39,7 +40,7 @@ public class MainManager : MonoBehaviour {
     public void Awake()
     {
         isPlay = true;
-     
+        Instance = this;
         leftHand.ControllerModelAvailable += LeftHand_ControllerModelAvailable;
     }
 
